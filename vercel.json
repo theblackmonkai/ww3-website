@@ -2,5 +2,11 @@
   "buildCommand": "echo 'Forcing rebuild' && ls -la",
   "devCommand": null,
   "installCommand": null,
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/styles.css",
+      "destination": "/styles.css?v=1773659085"
+    }
+  ]
 }
