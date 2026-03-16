@@ -242,8 +242,6 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 24px;
-    opacity: 0;
-    transform: translateY(20px);
     animation: heroReveal 0.8s var(--transition-smooth) 0.1s forwards;
 }
 
@@ -265,8 +263,6 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    opacity: 0;
-    transform: translateY(30px);
     animation: heroReveal 0.8s var(--transition-smooth) 0.2s forwards;
 }
 
@@ -276,8 +272,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 48px;
     font-weight: 400;
     letter-spacing: -0.01em;
-    opacity: 0;
-    transform: translateY(30px);
     animation: heroReveal 0.8s var(--transition-smooth) 0.3s forwards;
 }
 
@@ -287,8 +281,6 @@ h1, h2, h3, h4, h5, h6 {
     gap: 48px;
     margin-bottom: 56px;
     flex-wrap: wrap;
-    opacity: 0;
-    transform: translateY(30px);
     animation: heroReveal 0.8s var(--transition-smooth) 0.4s forwards;
 }
 
