@@ -1,5 +1,6 @@
 {
-  "buildCommand": null,
+  "buildCommand": "echo \"Build timestamp: $(date)\"",
   "devCommand": null,
-  "installCommand": null
+  "installCommand": null,
+  "outputDirectory": "."
 }
