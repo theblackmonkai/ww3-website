@@ -10,13 +10,17 @@
 <body>
     <nav class="navbar">
         <div class="nav-content">
-            <div class="nav-logo"> WW3</div>
+            <div class="nav-logo">WW3</div>
             <div class="nav-links">
                 <a href="#timeline">Timeline</a>
                 <a href="#players">Players</a>
                 <a href="#impact">Impact</a>
                 <a href="#analysis">Analysis</a>
             </div>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
         </div>
     </nav>
 
@@ -191,6 +195,81 @@
         </div>
     </section>
 
+    <section class="map-section" id="map">
+        <div class="section-container">
+            <h2 class="section-title">Global Theater</h2>
+            <p class="section-subtitle">Active conflict zones and strategic territories</p>
+            <div class="map-container">
+                <svg class="world-map" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Simplified world map -->
+                    <defs>
+                        <linearGradient id="oceanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="1000" height="500" fill="url(#oceanGradient)"/>
+                    <!-- North America -->
+                    <path class="land" d="M120,120 L200,100 L280,110 L320,150 L300,200 L250,220 L180,210 L120,180 Z" fill="#2d3436"/>
+                    <circle class="conflict-point" cx="200" cy="160" r="8" fill="#e74c3c">
+                        <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <text x="200" y="140" fill="#fff" font-size="12" text-anchor="middle">North America</text>
+                    <!-- South America -->
+                    <path class="land" d="M220,280 L280,260 L300,320 L280,400 L240,420 L200,360 L210,300 Z" fill="#2d3436"/>
+                    <circle class="conflict-point" cx="250" cy="340" r="6" fill="#e74c3c">
+                        <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <!-- Europe -->
+                    <path class="land" d="M440,100 L520,90 L560,120 L540,160 L480,170 L440,150 Z" fill="#2d3436"/>
+                    <circle class="conflict-point" cx="490" cy="130" r="10" fill="#e74c3c">
+                        <animate attributeName="r" values="10;15;10" dur="1.5s" repeatCount="indefinite"/>
+                    </circle>
+                    <text x="490" y="110" fill="#fff" font-size="12" text-anchor="middle">Europe</text>
+                    <!-- Africa -->
+                    <path class="land" d="M440,200 L520,190 L560,250 L540,350 L480,380 L420,340 L430,260 Z" fill="#2d3436"/>
+                    <circle class="conflict-point" cx="480" cy="280" r="7" fill="#e74c3c">
+                        <animate attributeName="r" values="7;11;7" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <!-- Russia/Asia -->
+                    <path class="land" d="M560,80 L750,60 L850,100 L880,160 L820,200 L700,190 L600,160 L560,120 Z" fill="#2d3436"/>
+                    <circle class="conflict-point" cx="720" cy="130" r="12" fill="#e74c3c">
+                        <animate attributeName="r" values="12;18;12" dur="1s" repeatCount="indefinite"/>
+                    </circle>
+                    <text x="720" y="110" fill="#fff" font-size="12" text-anchor="middle">Russia</text>
+                    <!-- China -->
+                    <path class="land" d="M740,180 L820,170 L860,220 L840,280 L780,290 L740,250 Z" fill="#2d3436"/>
+                    <circle class="conflict-point" cx="790" cy="230" r="9" fill="#e74c3c">
+                        <animate attributeName="r" values="9;14;9" dur="1.8s" repeatCount="indefinite"/>
+                    </circle>
+                    <text x="790" y="210" fill="#fff" font-size="12" text-anchor="middle">China</text>
+                    <!-- Middle East -->
+                    <path class="land" d="M560,170 L620,160 L660,200 L640,250 L580,260 L550,220 Z" fill="#2d3436"/>
+                    <circle class="conflict-point" cx="600" cy="210" r="8" fill="#e74c3c">
+                        <animate attributeName="r" values="8;12;8" dur="1.3s" repeatCount="indefinite"/>
+                    </circle>
+                    <!-- Australia -->
+                    <path class="land" d="M780,350 L880,340 L920,390 L900,440 L820,450 L770,410 Z" fill="#2d3436"/>
+                    <!-- Connection lines -->
+                    <line x1="200" y1="160" x2="490" y2="130" stroke="#e74c3c" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
+                    <line x1="490" y1="130" x2="720" y2="130" stroke="#e74c3c" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
+                    <line x1="720" y1="130" x2="790" y2="230" stroke="#e74c3c" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
+                    <line x1="490" y1="130" x2="600" y2="210" stroke="#e74c3c" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>
+                </svg>
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot active"></span>
+                        <span>Active Conflict Zone</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-line"></span>
+                        <span>Strategic Alliance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="analysis-section" id="analysis">
         <div class="section-container">
             <h2 class="section-title">Expert Analysis</h2>
@@ -228,8 +307,20 @@
 
     <footer class="footer">
         <div class="footer-content">
-            <p>© 2024 WW3 Information Portal. All rights reserved.</p>
-            <p class="footer-note">This is an informational website. Data is for educational purposes.</p>
+            <div class="footer-logo">WW3</div>
+            <p class="footer-tagline">Understanding global conflict through data and analysis.</p>
+            <div class="footer-sources">
+                <h4>Sources & References</h4>
+                <ul>
+                    <li>Global Conflict Data - Institute for Peace Studies</li>
+                    <li>Military Statistics - International Institute for Strategic Studies</li>
+                    <li>Economic Impact Analysis - World Bank Reports</li>
+                    <li>Geopolitical Analysis - Council on Foreign Relations</li>
+                    <li>Historical Precedents - Academic Publications</li>
+                </ul>
+            </div>
+            <p class="footer-disclaimer">This is a hypothetical scenario for educational purposes only. Not based on any specific real-world predictions.</p>
+            <p class="footer-copyright">© 2024 WW3 Information Portal. All rights reserved.</p>
         </div>
     </footer>
 

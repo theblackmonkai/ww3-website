@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Theme toggle
+    const themeToggle = document.querySelector('.theme-toggle');
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+
     // Intersection Observer for scroll animations
     const observerOptions = {
         root: null,
@@ -59,10 +71,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Navbar background on scroll
     window.addEventListener('scroll', () => {
         const navbar = document.querySelector('.navbar');
+        const currentTheme = document.documentElement.getAttribute('data-theme');
         if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+            navbar.style.background = currentTheme === 'light'
+                ? 'rgba(245, 245, 247, 0.98)'
+                : 'rgba(0, 0, 0, 0.98)';
         } else {
-            navbar.style.background = 'rgba(0, 0, 0, 0.8)';
+            navbar.style.background = 'var(--navbar-bg)';
         }
     });
 

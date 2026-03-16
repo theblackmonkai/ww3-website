@@ -15,6 +15,17 @@
     --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     --glass: rgba(255, 255, 255, 0.1);
     --glass-border: rgba(255, 255, 255, 0.2);
+    --navbar-bg: rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="light"] {
+    --bg-primary: #f5f5f7;
+    --bg-secondary: #ffffff;
+    --text-primary: #1d1d1f;
+    --text-secondary: #6e6e73;
+    --glass: rgba(0, 0, 0, 0.05);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --navbar-bg: rgba(245, 245, 247, 0.8);
 }
 
 body {
@@ -30,11 +41,11 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--navbar-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--glass-border);
 }
 
 .nav-content {
@@ -66,6 +77,40 @@ body {
 
 .nav-links a:hover {
     color: var(--text-primary);
+}
+
+.theme-toggle {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--glass-border);
+}
+
+.theme-toggle .sun-icon {
+    display: none;
+}
+
+.theme-toggle .moon-icon {
+    display: block;
+}
+
+[data-theme="light"] .theme-toggle .sun-icon {
+    display: block;
+}
+
+[data-theme="light"] .theme-toggle .moon-icon {
+    display: none;
 }
 
 /* Hero Section */
@@ -434,6 +479,72 @@ body {
     line-height: 1.7;
 }
 
+/* Map Section */
+.map-container {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 40px;
+    margin-top: 60px;
+    overflow: hidden;
+}
+
+.world-map {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+}
+
+.world-map .land {
+    stroke: var(--glass-border);
+    stroke-width: 1;
+    transition: fill 0.3s ease;
+}
+
+.world-map:hover .land {
+    fill: #3d4852;
+}
+
+.conflict-point {
+    filter: drop-shadow(0 0 10px rgba(231, 76, 60, 0.8));
+}
+
+.map-legend {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #e74c3c;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.legend-line {
+    width: 30px;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, #e74c3c 0, #e74c3c 5px, transparent 5px, transparent 10px);
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.2); }
+}
+
 /* Analysis Section */
 .analysis-section {
     background: var(--bg-secondary);
@@ -511,18 +622,70 @@ body {
 /* Footer */
 .footer {
     background: var(--bg-secondary);
-    padding: 60px 40px;
+    padding: 80px 40px;
     text-align: center;
     border-top: 1px solid var(--glass-border);
 }
 
-.footer-content p {
-    color: var(--text-secondary);
-    font-size: 14px;
-    margin-bottom: 8px;
+.footer-logo {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
 }
 
-.footer-note {
+.footer-tagline {
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.footer-sources {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    text-align: left;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 30px;
+}
+
+.footer-sources h4 {
+    color: var(--text-primary);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+.footer-sources ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-sources li {
+    color: var(--text-secondary);
+    font-size: 14px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.footer-sources li:last-child {
+    border-bottom: none;
+}
+
+.footer-disclaimer {
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-copyright {
+    color: var(--text-secondary);
     font-size: 12px;
 }
 
